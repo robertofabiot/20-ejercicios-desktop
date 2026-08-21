@@ -13,9 +13,9 @@ public class Data {
 
     public int getMax(){
         int max = numbers[0];
-        for(int number: numbers){
-            if(number>max){
-                max = number;
+        for(int i = 1; i < position; i++){
+            if(numbers[position]>max){
+                max = numbers[position];
             }
         }
         return max;
@@ -23,9 +23,9 @@ public class Data {
 
     public int getMin(){
         int min = numbers[0];
-        for(int number: numbers){
-            if(number<min){
-                min = number;
+        for(int i = 1; i < position; i++){
+            if(numbers[position]<min){
+                min = numbers[position];
             }
         }
         return min;
@@ -45,8 +45,8 @@ public class Data {
 
     public int getEvenNumbersCount(){
         int evenNumbersCount = 0;
-        for(int number: numbers){
-            if(number % 2 == 0){
+        for(int i = 1; i < position; i++){
+            if(i % 2 == 0){
                 evenNumbersCount++;
             }
         }

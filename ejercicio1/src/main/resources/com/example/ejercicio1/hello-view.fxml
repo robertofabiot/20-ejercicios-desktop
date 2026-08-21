@@ -13,14 +13,13 @@
       <font>
          <Font size="18.0" />
       </font></Label>
-   <TextField fx:id="txtNumber" />
+   <TextField fx:id="txtNumber" onAction="#onAddButtonClick" />
     <Button fx:id="btnAdd" text="Agregar" />
    <Label fx:id="lblMax" text="Max" />
    <Label fx:id="lblMin" text="Min" />
    <Label fx:id="lblAvg" text="Avg" />
-   <Label fx:id="lvlSum" text="Suma" />
+   <Label fx:id="lblSum" text="Suma" />
    <Label fx:id="lblEven" text="Pares" />
-   <Label fx:id="lvlOdd" text="Impares" />
-
-    <Label fx:id="welcomeText" />
+   <Label fx:id="lblOdd" text="Impares" />
+0
 </VBox>
