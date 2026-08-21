@@ -37,12 +37,11 @@ public class HelloController {
     @FXML
     private void onAddButtonClick(){
         data.add(Integer.parseInt(txtNumber.getText()));
-        lblMax.setText(String.valueOf(data.getMax()));
-        lblMin.setText(String.valueOf(data.getMin()));
-        lblAvg.setText(String.valueOf(data.getAvg()));
-        lblSum.setText(String.valueOf(data.getSum()));
-        lblEven.setText(String.valueOf(data.getEvenNumbersCount()));
-        lblOdd.setText(String.valueOf(data.getOddNumbersCount()));
-
+        lblMax.setText("Mayor: " + data.getMax());
+        lblMin.setText("Menor: " + data.getMin());
+        lblAvg.setText("Promedio: " + data.getAvg());
+        lblSum.setText("Suma: " + data.getSum());
+        lblEven.setText("Pares: " + data.getEvenNumbersCount());
+        lblOdd.setText("Impares: " + data.getOddNumbersCount());
     }
 }

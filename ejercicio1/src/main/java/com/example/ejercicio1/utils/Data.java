@@ -13,9 +13,9 @@ public class Data {
 
     public int getMax(){
         int max = numbers[0];
-        for(int i = 1; i < position; i++){
-            if(numbers[position]>max){
-                max = numbers[position];
+        for(int i = 0; i < position; i++){
+            if(numbers[i]>max){
+                max = numbers[i];
             }
         }
         return max;
@@ -23,16 +23,16 @@ public class Data {
 
     public int getMin(){
         int min = numbers[0];
-        for(int i = 1; i < position; i++){
-            if(numbers[position]<min){
-                min = numbers[position];
+        for(int i = 0; i < position; i++){
+            if(numbers[i]<min){
+                min = numbers[i];
             }
         }
         return min;
     }
 
     public float getAvg(){
-        return (float) (getSum() / position);
+        return (((float) getSum()) / position);
     }
 
     public int getSum(){
@@ -45,8 +45,8 @@ public class Data {
 
     public int getEvenNumbersCount(){
         int evenNumbersCount = 0;
-        for(int i = 1; i < position; i++){
-            if(i % 2 == 0){
+        for(int i = 0; i < position; i++){
+            if(numbers[i] % 2 == 0){
                 evenNumbersCount++;
             }
         }
