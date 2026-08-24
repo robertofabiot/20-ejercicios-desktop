@@ -6,6 +6,9 @@ import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 
 public class HelloController {
+
+        
+
     @FXML
     private TextField tfNumber;
 
@@ -21,6 +24,6 @@ public class HelloController {
     public void addNumber(){
         int number = Integer.parseInt(tfNumber.getText());
         tfNumber.setText("");
-
+        originalNumbers.setText("Numeros originales: " + );
     }
 }
