@@ -3,7 +3,7 @@ package com.example.ejercicio5;
 import java.util.ArrayList;
 import java.util.List;
 
-public class data {
+public class Data {
     private List<String> students = new ArrayList<>();
 
     public List<String> getStudents(){
@@ -28,6 +28,6 @@ public class data {
     }
 
     public Integer getQuantity(String student){
-        return search(student).size();
+        return students.size();
     }
 }
