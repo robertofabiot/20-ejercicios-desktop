@@ -11,7 +11,7 @@
    <children>
       <Label text="Notas" />
       <TextField fx:id="tfGrade" />
-      <Button fx:id="btnAdd" mnemonicParsing="false" text="Agregar" />
+      <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addGrade" text="Agregar" />
       <Label fx:id="lblAvg" text="Promedio general:" />
       <Label fx:id="lblHighestGrade" text="Nota mayor: " />
       <Label fx:id="lblLowestGrade" text="Nota menor: " />
