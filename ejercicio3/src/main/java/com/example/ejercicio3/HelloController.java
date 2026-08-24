@@ -7,7 +7,7 @@ import javafx.scene.control.TextField;
 
 public class HelloController {
 
-        
+    Data data = new Data();
 
     @FXML
     private TextField tfNumber;
@@ -23,7 +23,10 @@ public class HelloController {
 
     public void addNumber(){
         int number = Integer.parseInt(tfNumber.getText());
+        data.addNumber(number);
         tfNumber.setText("");
-        originalNumbers.setText("Numeros originales: " + );
+        originalNumbers.setText("Numeros originales: " + data.getNumbers().toString());
+        sortedNumbers.setText("Numeros ordenados: " + data.getSortedNumbers().toString());
+
     }
 }
