@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox alignment="CENTER" prefHeight="547.0" prefWidth="481.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejercicio2.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <children>
+      <Label text="Agregar un numero">
+         <font>
+            <Font name="Inter Semi Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfAddNumber" prefHeight="26.0" prefWidth="276.0" />
+      <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#addNumber" text="Agregar" />
+      <Label layoutX="190.0" layoutY="230.0" text="Buscar">
+         <font>
+            <Font name="Inter Semi Bold" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="tfSearch" />
+      <Button fx:id="btnSearch" mnemonicParsing="false" onAction="#searchNumber" text="Buscar" />
+      <Label fx:id="exists" layoutX="229.0" layoutY="294.0" text="Existe:">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="position" layoutX="223.0" layoutY="403.0" text="Posicion:">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Label>
+      <Label fx:id="count" layoutX="215.0" layoutY="422.0" text="Veces que aparece:">
+         <font>
+            <Font name="JetBrains Mono Regular" size="13.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>
