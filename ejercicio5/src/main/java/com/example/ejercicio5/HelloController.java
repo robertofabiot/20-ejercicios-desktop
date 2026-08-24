@@ -64,5 +64,4 @@ public class HelloController {
         lblResult.setText("Hay " +  quantity + "estudiantes");
     }
 
-
 }
