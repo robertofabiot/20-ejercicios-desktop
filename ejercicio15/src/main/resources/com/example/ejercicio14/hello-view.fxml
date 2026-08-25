@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.Button?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.example.ejercicio14.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
+    </padding>
+
+    <Label text="Mostrar siguiente: " fx:id="currentDocument"/>
+    <Button text="Agregar documento" onAction="#addDocument"/>
+    <Button text="Imprimir documento" onAction="#printDocument"/>
+    <Label text="Documentos pendientes: " fx:id="pendingDocumentsCount"/>
+</VBox>
