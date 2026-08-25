@@ -9,6 +9,16 @@ public class Contact {
 
     private String email;
 
+
+    public Contact() {
+    }
+
+    public Contact(String name, String phoneNumber, String email) {
+        this.name = name;
+        this.phoneNumber = phoneNumber;
+        this.email = email;
+    }
+
     public String getName() {
         return name;
     }

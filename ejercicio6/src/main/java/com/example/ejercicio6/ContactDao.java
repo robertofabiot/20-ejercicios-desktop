@@ -4,8 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ContactDao {
-    private List<Contact> contactList = new ArrayList<>();
-
+    private final List<Contact> contactList = new ArrayList<>();
 
     public List<Contact> getContactList() {
         return contactList;
@@ -15,7 +14,21 @@ public class ContactDao {
         contactList.add(contact);
     }
 
-    public boolean deleteContact(Contact contact){
-        return contactList.remove(contact);
+    public Contact searchContact(String name){
+        for(Contact contact: contactList){
+            if(contact.getName().equals(name)){
+                return contact;
+            }
+        }
+        return null;
+    }
+
+    public boolean deleteContact(String name){
+        for(Contact contact: contactList){
+            if(contact.getName().equals(name)){
+                return contactList.remove(contact);
+            }
+        }
+        return false;
     }
 }
