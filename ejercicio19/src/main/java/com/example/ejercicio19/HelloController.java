@@ -1,4 +1,4 @@
-package com.example.ejercicio14;
+package com.example.ejercicio19;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -21,11 +21,9 @@ public class HelloController {
 
     @FXML
     public void saveChanges(ActionEvent actionEvent) {
-        // Guardamos el estado actual antes de actualizarlo
         undoStack.push(currentState);
         currentState = taEditor.getText();
 
-        // Al realizar un nuevo cambio, se limpia la pila de rehacer
         redoStack.clear();
 
         lblStatus.setText("Estado actual: Cambios guardados");
