@@ -12,6 +12,6 @@
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
     <Label text="Ingrese una expresión matemática con paréntesis"/>
-    <TextField fx:id="expresion" onAction="#evaluateParenthesis"/>
+    <TextField fx:id="expression" onAction="#areParenthesisBalanced"/>
     <Label fx:id="result" text="Resultado: "/>
 </VBox>

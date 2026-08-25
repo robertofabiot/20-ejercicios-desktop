@@ -9,18 +9,42 @@ import java.util.Stack;
 
 public class HelloController {
 
-    Stack<String> expresionStack = new Stack<>();
+    Stack<Character> expresionStack = new Stack<>();
 
-    public TextField expresion;
+    @FXML
+    public TextField expression;
+    @FXML
     public Label result;
-    @FXML
-    private Label welcomeText;
 
     @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
+    public void initialize() {
+        expression.textProperty().addListener((observable, oldValue, newValue) -> {
+            if(areParenthesisBalanced(new ActionEvent())){
+                result.setText("Resultado: Parentesis balanceados");
+            } else{
+                result.setText("Resultado: Parentesis no balanceados");
+            }
+        });
     }
 
-    public void evaluateParenthesis(ActionEvent actionEvent) {
+    public boolean areParenthesisBalanced(ActionEvent actionEvent) {
+        expresionStack.clear();
+        int countOpening = 0;
+        int countClosing = 0;
+        for(int i = 0; i < expression.getText().length(); i++){
+            char currentCharacter = expression.getText().charAt(i);
+
+            if((currentCharacter == '(' && i == expression.getLength()-1) || (currentCharacter == ')' && i == 0)) return false;
+
+            if(currentCharacter == '('){
+                expresionStack.push(currentCharacter);
+                countOpening++;
+            }
+            if(currentCharacter == ')'){
+                expresionStack.push(currentCharacter);
+                countClosing++;
+            }
+        }
+        return countClosing == countOpening;
     }
 }
