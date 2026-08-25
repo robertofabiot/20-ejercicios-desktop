@@ -7,21 +7,21 @@
 <?import javafx.scene.layout.VBox?>
 
 <VBox alignment="CENTER" spacing="15.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.ejercicio14.HelloController">
+      fx:controller="com.example.ejercicio16.HelloController">
     <padding>
         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
     </padding>
 
-    <TextField fx:id="productName" promptText="Nombre del producto"/>
-    <TextField fx:id="productPrice" promptText="Precio"/>
-    <TextField fx:id="productQuantity" promptText="Cantidad"/>
-    <Button text="Registrar producto" onAction="#registerProduct"/>
+    <TextField fx:id="productName" promptText="Product name"/>
+    <TextField fx:id="productPrice" promptText="Price"/>
+    <TextField fx:id="productQuantity" promptText="Quantity"/>
+    <Button text="Register product" onAction="#registerProduct"/>
 
-    <TextField fx:id="discountInput" promptText="Porcentaje de descuento (%)"/>
-    <Button text="Calcular totales" onAction="#calculateTotals"/>
+    <TextField fx:id="discountInput" promptText="Discount percentage (%)"/>
+    <Button text="Calculate totals" onAction="#calculateTotals"/>
 
     <Label text="Subtotal: " fx:id="subtotalLabel"/>
-    <Label text="Descuento: " fx:id="discountLabel"/>
-    <Label text="IVA (15%): " fx:id="ivaLabel"/>
+    <Label text="Discount: " fx:id="discountLabel"/>
+    <Label text="VAT (15%): " fx:id="vatLabel"/>
     <Label text="Total: " fx:id="totalLabel"/>
 </VBox>
