@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox alignment="CENTER" prefHeight="550.0" prefWidth="511.0" spacing="20.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejercicio6.HelloController">
+    <padding>
+        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+    </padding>
+   <HBox prefHeight="473.0" prefWidth="655.0" spacing="20.0">
+      <children>
+         <VBox alignment="CENTER" prefHeight="473.0" prefWidth="215.0" spacing="20.0">
+            <children>
+               <Label text="Nombre" />
+               <TextField fx:id="tfNameAdd" />
+               <Label text="Telefono" />
+               <TextField fx:id="tfPhoneNumber" />
+               <Label text="Correo" />
+               <TextField fx:id="tfEmail" />
+                <Button fx:id="btnAddContact" onAction="#addContact" text="Agregar contacto" />
+            </children>
+         </VBox>
+         <VBox alignment="CENTER" prefHeight="473.0" prefWidth="198.0" spacing="20.0">
+            <children>
+               <Label alignment="CENTER" text="Nombre" />
+               <TextField fx:id="tfNameSearch" alignment="CENTER" />
+               <Button mnemonicParsing="false" onAction="#searchContact" text="Buscar" />
+               <Label fx:id="lblPhone" layoutX="80.0" layoutY="303.0" text="Telefono:" />
+               <Label fx:id="lblEmail" layoutX="81.0" layoutY="303.0" text="Correo:" />
+               <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteContact" text="Eliminar" />
+            </children>
+         </VBox>
+      </children></HBox>
+</VBox>
