@@ -14,22 +14,23 @@
             <children>
                <Label text="Nombre" />
                <TextField fx:id="tfNameAdd" />
-               <Label text="Telefono" />
-               <TextField fx:id="tfPhoneNumber" />
-               <Label text="Correo" />
-               <TextField fx:id="tfEmail" />
-                <Button fx:id="btnAddContact" onAction="#addContact" text="Agregar contacto" />
+               <Label text="Cantidad" />
+               <TextField fx:id="tfQuantity" />
+               <Label text="Precio" />
+               <TextField fx:id="tfPrice" />
+                <Button fx:id="btnUpsertProduct" onAction="#upsertProduct" text="Agregar o editar producto" />
             </children>
          </VBox>
          <VBox alignment="CENTER" prefHeight="473.0" prefWidth="198.0" spacing="20.0">
             <children>
                <Label alignment="CENTER" text="Nombre" />
                <TextField fx:id="tfNameSearch" alignment="CENTER" />
-               <Button mnemonicParsing="false" onAction="#searchContact" text="Buscar" />
-               <Label fx:id="lblPhone" layoutX="80.0" layoutY="303.0" text="Telefono:" />
-               <Label fx:id="lblEmail" layoutX="81.0" layoutY="303.0" text="Correo:" />
-               <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteContact" text="Eliminar" />
+               <Button mnemonicParsing="false" onAction="#searchProduct" text="Buscar" />
+               <Label fx:id="lblQuantity" layoutX="80.0" layoutY="303.0" text="Cantidad:" />
+               <Label fx:id="lblPrice" layoutX="81.0" layoutY="303.0" text="Precio:" />
+               <Button fx:id="btnDelete" mnemonicParsing="false" onAction="#deleteProduct" text="Eliminar" />
             </children>
          </VBox>
       </children></HBox>
+   <Label fx:id="lblTotalValue" text="Valor total:" />
 </VBox>

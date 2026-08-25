@@ -13,56 +13,60 @@ public class HelloController {
     private TextField tfNameAdd;
 
     @FXML
-    private TextField tfPhoneNumber;
+    private TextField tfQuantity;
 
     @FXML
-    private TextField tfEmail;
+    private TextField tfPrice;
 
     @FXML
     private TextField tfNameSearch;
 
     @FXML
-    private Label lblPhone;
+    private Label lblQuantity;
 
     @FXML
-    private Label lblEmail;
+    private Label lblPrice;
 
     @FXML
-    public void addContact(){
+    private Label lblTotalValue;
+
+    @FXML
+    public void upsertProduct(){
         String name = tfNameAdd.getText();
-        String phoneNumber = tfPhoneNumber.getText();
-        String email = tfEmail.getText();
+        Integer quantity = Integer.parseInt(tfQuantity.getText());
+        Double price = Double.parseDouble(tfPrice.getText());
 
-        Product newProduct = new Product(name, phoneNumber, email);
-        dao.addContact(newProduct);
+        Product newProduct = new Product(quantity, price, name);
+        dao.upsertProduct(newProduct);
 
         tfNameAdd.setText("");
-        tfEmail.setText("");
-        tfPhoneNumber.clear();
+        tfQuantity.setText("");
+        tfPrice.clear();
         tfNameSearch.setText("");
+        updateTotalValue();
     }
 
     @FXML
-    public void searchContact(){
+    public void searchProduct(){
         String name = tfNameSearch.getText();
-        Product product = dao.searchContact(name);
+        Product product = dao.searchProduct(name);
         if(product == null){
-            lblPhone.setText("Teléfono: -");
-            lblEmail.setText("Correo: -");
+            lblQuantity.setText("Cantidad: -");
+            lblPrice.setText("Precio: -");
             return;
         }
-        lblPhone.setText("Teléfono: " + product.getPhoneNumber());
-        lblEmail.setText("Correo: " + product.getEmail());
+        lblQuantity.setText("Cantidad: " + product.getStock());
+        lblPrice.setText("Precio: " + product.getPrice());
     }
 
     @FXML
-    public void deleteContact(){
+    public void deleteProduct(){
         String name = tfNameSearch.getText();
-        if (dao.deleteContact(name)) {
+        if (dao.deleteProduct(name)) {
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setTitle("Contacto Eliminado");
+            alert.setTitle("Producto Eliminado");
             alert.setHeaderText(null);
-            alert.setContentText("El contacto '" + name + "' fue eliminado exitosamente.");
+            alert.setContentText("El producto '" + name + "' fue eliminado exitosamente.");
             tfNameSearch.clear();
             alert.showAndWait();
 
@@ -70,9 +74,15 @@ public class HelloController {
             Alert errorAlert = new Alert(Alert.AlertType.ERROR);
             errorAlert.setTitle("Error al eliminar");
             errorAlert.setHeaderText(null);
-            errorAlert.setContentText("No se pudo encontrar o eliminar el contacto.");
+            errorAlert.setContentText("No se pudo encontrar o eliminar el producto.");
 
             errorAlert.showAndWait();
         }
+        updateTotalValue();
+    }
+
+    @FXML
+    private void updateTotalValue(){
+        lblTotalValue.setText("Valor totaL: " + dao.getTotalValue());
     }
 }
